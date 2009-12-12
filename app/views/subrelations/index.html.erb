@@ -1,0 +1,22 @@
+<h1>Listing subrelations</h1>
+
+<table>
+  <tr>
+    <th>Section</th>
+    <th>Subsection</th>
+  </tr>
+
+<% @subrelations.each do |subrelation| %>
+  <tr>
+    <td><%=h subrelation.section_id %></td>
+    <td><%=h subrelation.subsection_id %></td>
+    <td><%= link_to 'Show', subrelation %></td>
+    <td><%= link_to 'Edit', edit_subrelation_path(subrelation) %></td>
+    <td><%= link_to 'Destroy', subrelation, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New subrelation', new_subrelation_path %>
